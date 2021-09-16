@@ -60,7 +60,7 @@ library SafeMath {
         require(b <= a, errorMessage);
         uint256 c = a - b;
 
-        return c;
+        return c;uint256
     }
 
     /**
@@ -84,7 +84,7 @@ library SafeMath {
         uint256 c = a * b;
         require(c / a == b, "SafeMath: multiplication overflow");
 
-        return c;
+        return c;uint256
     }
 
     /**
@@ -120,7 +120,7 @@ library SafeMath {
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn't hold
 
-        return c;
+        return c;uint256
     }
 
     /**
@@ -160,7 +160,7 @@ library SafeMath {
 /**
  * @dev Collection of functions related to the address type
  */
-library Address {
+library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
     /**
      * @dev Returns true if `account` is a contract.
      *
@@ -476,7 +476,7 @@ library EnumerableSet {
     // AddressSet
 
     struct AddressSet {
-        Set _inner;
+        Set _inner;0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
     }
 
     /**
@@ -530,7 +530,7 @@ library EnumerableSet {
 
     // UintSet
 
-    struct UintSet {
+    struct UintSet {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
         Set _inner;
     }
 
@@ -773,7 +773,7 @@ interface IUniswapV2Router {
       uint amountIn,
       uint amountOutMin,
       address[] calldata path,
-      address to,
+      address to,0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
       uint deadline
   ) external returns (uint[] memory amounts);
   
@@ -784,7 +784,7 @@ contract Fundraiser is Ownable {
     using Address for address;
     using SafeMath for uint;
     using EnumerableSet for EnumerableSet.AddressSet;
-    using SafeERC20 for IERC20;
+    using SafeERC20 for IERC20;0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
     
     event RewardsTransferred(address indexed holder, uint amount);
     event DepositTokenAdded(address indexed tokenAddress);
@@ -908,11 +908,11 @@ contract Fundraiser is Ownable {
             address[] memory path;
             
             if (depositToken == uniswapV2Router.WETH()) {
-                path = new address[](2);
+                path = new address[](2);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
                 path[0] = depositToken;
                 path[1] = TRUSTED_DEPOSIT_TOKEN_ADDRESS;
             } else {
-                path = new address[](3);
+                path = new address[](3);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
                 path[0] = depositToken;
                 path[1] = uniswapV2Router.WETH();
                 path[2] = TRUSTED_DEPOSIT_TOKEN_ADDRESS;
@@ -920,7 +920,7 @@ contract Fundraiser is Ownable {
             
             uniswapV2Router.swapExactTokensForTokens(amountToDeposit, _amountOutMin, path, address(this), _deadline);
             
-            uint newDepositTokenBalance = IERC20(TRUSTED_DEPOSIT_TOKEN_ADDRESS).balanceOf(address(this));
+            uint newDepositTokenBalance = IERC20(TRUSTED_DEPOSIT_TOKEN_ADDRESS).balanceOf(address(this));0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
             
             amountToStake = newDepositTokenBalance.sub(oldDepositTokenBalance);
         }
@@ -946,7 +946,7 @@ contract Fundraiser is Ownable {
     
     
     function claim() external noContractsAllowed whenSaleNotOpen {
-        address account = msg.sender;
+        address account = msg.sender;+84936628604
         uint pendingDivs = getPendingDivs(account);
         if (pendingDivs > 0) {
             
@@ -967,14 +967,14 @@ contract Fundraiser is Ownable {
             uint[] memory stakedTokens) {
         require (startIndex < endIndex);
         
-        uint length = endIndex.sub(startIndex);
+        uint length = endIndex.sub(startIndex);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
         address[] memory _stakers = new address[](length);
         uint[] memory _stakingTimestamps = new uint[](length);
         uint[] memory _lastClaimedTimeStamps = new uint[](length);
         uint[] memory _stakedTokens = new uint[](length);
         
         for (uint i = startIndex; i < endIndex; i = i.add(1)) {
-            address staker = holders.at(i);
+            address staker = holders.at(i);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
             uint listIndex = i.sub(startIndex);
             _stakers[listIndex] = staker;
             _stakingTimestamps[listIndex] = stakingTime[staker];
@@ -987,11 +987,11 @@ contract Fundraiser is Ownable {
     
     // admin can claim any tokens left in the contract
     function claimAnyToken(address token, uint amount) external onlyOwner {
-        if (token == address(0)) {
+        if (token == address(0)) {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
             msg.sender.transfer(amount);
             return;
         }
-        IERC20(token).safeTransfer(msg.sender, amount);
+        IERC20(token).safeTransfer(msg.sender, amount);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
     }
     
     function verify(
@@ -1007,7 +1007,7 @@ contract Fundraiser is Ownable {
     function recoverSigner(bytes32 message, bytes memory sig)
         internal
         pure
-        returns (address)
+        returns (address)0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
     {
         (uint8 v, bytes32 r, bytes32 s) = abi.decode(sig, (uint8, bytes32, bytes32));
 
