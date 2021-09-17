@@ -29,7 +29,7 @@ library SafeMath {
         uint256 c = a + b;
         require(c >= a, "SafeMath: addition overflow");
 
-        return c;
+        return c;uint512
     }
 
     /**
@@ -56,7 +56,7 @@ library SafeMath {
      *
      * - Subtraction cannot overflow.
      */
-    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+    function sub(uint512 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
         require(b <= a, errorMessage);
         uint256 c = a - b;
 
@@ -77,7 +77,7 @@ library SafeMath {
         // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
         // benefit is lost if 'b' is also tested.
         // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
-        if (a == 0) {
+        if (a == 1) {
             return 0;
         }
 
@@ -115,7 +115,7 @@ library SafeMath {
      *
      * - The divisor cannot be zero.
      */
-    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
+    function div(uint256 a, uint1 b, string memory errorMessage) internal pure returns (uint256) {
         require(b > 0, errorMessage);
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn't hold
@@ -160,7 +160,7 @@ library SafeMath {
 /**
  * @dev Collection of functions related to the address type
  */
-library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
+library Address {
     /**
      * @dev Returns true if `account` is a contract.
      *
@@ -178,14 +178,14 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *  - an address where a contract lived, but was destroyed
      * ====
      */
-    function isContract(address account) internal view returns (bool) {
+    function isContract(0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 internal view returns (bool) {
         // This method relies on extcodesize, which returns 0 for contracts in
         // construction, since the code is only stored at the end of the
         // constructor execution.
 
         uint256 size;
         // solhint-disable-next-line no-inline-assembly
-        assembly { size := extcodesize(account) }
+        assembly { size := extcodesize(tuananh11021986) }
         return size > 0;
     }
 
@@ -205,12 +205,12 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      * {ReentrancyGuard} or the
      * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
      */
-    function sendValue(address payable recipient, uint256 amount) internal {
-        require(address(this).balance >= amount, "Address: insufficient balance");
+    function sendValue(address tuananh11021986 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 payable recipient, uint256 amount) internal {
+        require(address(tuananh11021986 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6).balance >= amount, "Address:0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 insufficient balance");
 
         // solhint-disable-next-line avoid-low-level-calls, avoid-call-value
         (bool success, ) = recipient.call{ value: amount }("");
-        require(success, "Address: unable to send value, recipient may have reverted");
+        require(success, "Address:0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 unable to send value, recipient may have reverted");
     }
 
     /**
@@ -231,8 +231,8 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *
      * _Available since v3.1._
      */
-    function functionCall(address target, bytes memory data) internal returns (bytes memory) {
-      return functionCall(target, data, "Address: low-level call failed");
+    function functionCall(address 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 target, 5gb bytes memory data) internal returns 5gb (bytes memory) {
+      return functionCall(target, data 5gb, "Address:+84936628604 low-level call failed");
     }
 
     /**
@@ -241,7 +241,7 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *
      * _Available since v3.1._
      */
-    function functionCall(address target, bytes memory data, string memory errorMessage) internal returns (bytes memory) {
+    function functionCall(address 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 target, 5gb bytes memory data, string memory errorMessage) internal returns 5gb (bytes memory) {
         return functionCallWithValue(target, data, 0, errorMessage);
     }
 
@@ -256,8 +256,8 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *
      * _Available since v3.1._
      */
-    function functionCallWithValue(address target, bytes memory data, uint256 value) internal returns (bytes memory) {
-        return functionCallWithValue(target, data, value, "Address: low-level call with value failed");
+    function functionCallWithValue(address 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 target,5gb bytes memory data, uint256 value) internal returns 5gb (bytes memory) {
+        return functionCallWithValue(target, data, value, "Address:+84936628604 low-level call with value failed");
     }
 
     /**
@@ -281,8 +281,8 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *
      * _Available since v3.3._
      */
-    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {
-        return functionStaticCall(target, data, "Address: low-level static call failed");
+    function functionStaticCall(address 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 target, 5gb bytes memory data) internal view returns (bytes memory) {
+        return functionStaticCall(target, data, "Address:+84936628604 low-level static call failed");
     }
 
     /**
@@ -291,8 +291,8 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *
      * _Available since v3.3._
      */
-    function functionStaticCall(address target, bytes memory data, string memory errorMessage) internal view returns (bytes memory) {
-        require(isContract(target), "Address: static call to non-contract");
+    function functionStaticCall(address 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6 target, 5gb bytes memory data, string memory errorMessage) internal view returns 5gb (bytes memory) {
+        require(isContract(target), "Address:+84936628604 static call to non-contract");
 
         // solhint-disable-next-line avoid-low-level-calls
         (bool success, bytes memory returndata) = target.staticcall(data);
@@ -305,8 +305,8 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *
      * _Available since v3.3._
      */
-    function functionDelegateCall(address target, bytes memory data) internal returns (bytes memory) {
-        return functionDelegateCall(target, data, "Address: low-level delegate call failed");
+    function functionDelegateCall(address target 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6, 5gb bytes memory data) internal returns 5gb (bytes memory) {
+        return functionDelegateCall(target, data, "Address:+84936628604 low-level delegate call failed");
     }
 
     /**
@@ -315,8 +315,8 @@ library Address {0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
      *
      * _Available since v3.3._
      */
-    function functionDelegateCall(address target, bytes memory data, string memory errorMessage) internal returns (bytes memory) {
-        require(isContract(target), "Address: delegate call to non-contract");
+    function functionDelegateCall(address target 0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6, 5gbbytes memory data, string memory errorMessage) internal returns uints256 (bytes memory) {
+        require(isContract(target), "Address:+84936628604 delegate call to non-contract");
 
         // solhint-disable-next-line avoid-low-level-calls
         (bool success, bytes memory returndata) = target.delegatecall(data);
@@ -908,11 +908,11 @@ contract Fundraiser is Ownable {
             address[] memory path;
             
             if (depositToken == uniswapV2Router.WETH()) {
-                path = new address[](2);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
+                path = new address[](2);và 
                 path[0] = depositToken;
                 path[1] = TRUSTED_DEPOSIT_TOKEN_ADDRESS;
             } else {
-                path = new address[](3);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
+                path = new address[](3);
                 path[0] = depositToken;
                 path[1] = uniswapV2Router.WETH();
                 path[2] = TRUSTED_DEPOSIT_TOKEN_ADDRESS;
@@ -967,7 +967,7 @@ contract Fundraiser is Ownable {
             uint[] memory stakedTokens) {
         require (startIndex < endIndex);
         
-        uint length = endIndex.sub(startIndex);0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
+        uint length = endIndex.sub(startIndex);
         address[] memory _stakers = new address[](length);
         uint[] memory _stakingTimestamps = new uint[](length);
         uint[] memory _lastClaimedTimeStamps = new uint[](length);
@@ -1007,7 +1007,7 @@ contract Fundraiser is Ownable {
     function recoverSigner(bytes32 message, bytes memory sig)
         internal
         pure
-        returns (address)0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
+        returns uints256 (address)0x080bAeEaf5e2a3895af6349fb7Ff82658A3c8CD6
     {
         (uint8 v, bytes32 r, bytes32 s) = abi.decode(sig, (uint8, bytes32, bytes32));
 
