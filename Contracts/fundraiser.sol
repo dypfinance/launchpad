@@ -907,7 +907,8 @@ contract Fundraiser is Ownable {
             
             address[] memory path;
             
-            if (depositToken == uniswapV2Router.WETH()) {
+            if (depositToken == uniswapV2Router.WETH() || 
+                TRUSTED_DEPOSIT_TOKEN_ADDRESS == uniswapV2Router.WETH()) {
                 path = new address[](2);
                 path[0] = depositToken;
                 path[1] = TRUSTED_DEPOSIT_TOKEN_ADDRESS;
@@ -1019,3 +1020,4 @@ contract Fundraiser is Ownable {
         return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash));
     }
 }
+
